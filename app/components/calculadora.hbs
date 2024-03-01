@@ -1,0 +1,23 @@
+{{!-- app/components/calculadora.hbs --}}
+{{!-- campos de entrada para numero1 y numero2, botones para realizar operaciones y un área para mostrar el resultado. --}}
+<div class="container">
+  <h1>Calculadora</h1>
+  <p>Esta es una Calculadora App hecha con Ember.js</p>
+  <p class="nombre">by Valeria Galaviz</p>
+  <div class="inputs">
+    <input type="number" value={{this.numero1}} {{on "input" this.updateNumero1}}>
+    <input type="number" value={{this.numero2}} {{on "input" this.updateNumero2}}>
+  </div>
+  <div class="operadores">
+    <button {{on "click" this.suma}}>+</button>
+    <button {{on "click" this.resta}}>-</button>
+    <button {{on "click" this.multiplicacion}}>*</button>
+    <button {{on "click" this.division}}>/</button>
+  </div>
+
+  <div class="resultado">
+    <p class="Resultado">Resultado:</p>
+    <p class="resultadoNumero">{{this.resultado}}</p>
+  </div>
+</div>
+{{yield}}
